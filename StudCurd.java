@@ -38,7 +38,7 @@ public class StudCrud {
         return connection;
     }
 
-    public void insertStudent(STUDENT student) throws SQLException {
+    public void insertStudent(Student student) throws SQLException {
         System.out.println(INSERT_STUDENT_SQL);
         
         try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(INSERT_STUDENT_SQL)) {
@@ -63,7 +63,7 @@ public class StudCrud {
             
             ResultSet rs = preparedStatement.executeQuery();
 
-            // Step 4: Process the ResultSet object.
+            
             while (rs.next()) {
                 String student_name = rs.getString("student_name");
                 String student_dob = rs.getDate("student_dob");
